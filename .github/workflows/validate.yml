@@ -1,0 +1,35 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Validate marketplace, plugins, and skills
+        run: python3 scripts/validate.py
+
+      - name: Check skill symlinks resolve
+        run: |
+          set -euo pipefail
+          fail=0
+          for link in plugins/*/skills/*; do
+            if [ ! -f "$link/SKILL.md" ]; then
+              echo "broken symlink: $link"
+              fail=1
+            fi
+          done
+          exit $fail
