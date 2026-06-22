@@ -12,24 +12,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
-      - name: Install dependencies
-        run: pip install pyyaml
+      # Installs the exact tool versions pinned in .mise.toml, so CI and local
+      # dev run the same toolchain.
+      - uses: jdx/mise-action@v2
 
       - name: Validate marketplace, plugins, and skills
-        run: python3 scripts/validate.py
-
-      - name: Check skill symlinks resolve
-        run: |
-          set -euo pipefail
-          fail=0
-          for link in plugins/*/skills/*; do
-            if [ ! -f "$link/SKILL.md" ]; then
-              echo "broken symlink: $link"
-              fail=1
-            fi
-          done
-          exit $fail
+        run: mise run validate

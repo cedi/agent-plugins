@@ -1,0 +1,11 @@
+# Project-scoped toolchain. Nothing here should pollute the system.
+# After cloning: `mise install && mise run validate`
+
+[tools]
+# Validator runtime. Pinned exact for reproducibility across CI and local dev;
+# the validator is standard-library only, so no extra packages are needed.
+python = "3.12.12"
+
+[tasks.validate]
+description = "Validate marketplace, plugins, and skills"
+run = "python3 scripts/validate.py"
