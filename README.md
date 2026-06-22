@@ -43,6 +43,7 @@ and output style (`talk`).
 Per-skill symlinks the skills into `~/.agents/skills/`, the one global root all
 three read. Idempotent and additive — existing entries are left untouched.
 
+> [!WARNING]
 > If `~/.agents/skills` is a symlink into your dotfiles, the installer refuses to
 > write through it. Convert it to a real directory first (a symlink farm
 > aggregating any externally-managed skills and this repo).
