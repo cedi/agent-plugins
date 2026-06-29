@@ -1,7 +1,7 @@
 {
   "name": "cedi-agent-plugins",
   "description": "Cedi's marketplace for reusable Claude Code agent skills and workflows",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "owner": {
     "name": "cedi",
     "email": "github@specht-labs.de"
