@@ -16,7 +16,7 @@ Cursor**.
 
 | Plugin | Skills | Agents | Output styles |
 |--------|--------|--------|---------------|
-| **git-workflows** | changelog-generator, pr-review, pull-request | code-reviewer | — |
+| **git-workflows** | changelog-generator, pr-review, pull-request, sre-code-reviewer | — | — |
 | **documentation** | documentation, strategic-design-doc | design-doc | — |
 | **tpm** | jira-cli | — | — |
 | **product-design** | cognitive-load, fogg-behavior-mode, trust-psychology | — | — |
@@ -31,8 +31,8 @@ claude plugin marketplace add cedi/agent-plugins
 claude plugin install git-workflows@cedi-agent-plugins
 ```
 
-Installs the skills **and** the bundled agents (`code-reviewer`, `design-doc`)
-and output style (`talk`).
+Installs the skills **and** the bundled agent (`design-doc`) and output style
+(`talk`).
 
 ### OpenCode / Codex / Cursor
 
