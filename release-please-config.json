@@ -23,7 +23,8 @@
         { "type": "json", "path": "plugins/documentation/.claude-plugin/plugin.json", "jsonpath": "$.version" },
         { "type": "json", "path": "plugins/tpm/.claude-plugin/plugin.json", "jsonpath": "$.version" },
         { "type": "json", "path": "plugins/product-design/.claude-plugin/plugin.json", "jsonpath": "$.version" },
-        { "type": "json", "path": "plugins/mental-models/.claude-plugin/plugin.json", "jsonpath": "$.version" }
+        { "type": "json", "path": "plugins/mental-models/.claude-plugin/plugin.json", "jsonpath": "$.version" },
+        { "type": "json", "path": "plugins/second-brain/.claude-plugin/plugin.json", "jsonpath": "$.version" }
       ]
     }
   }

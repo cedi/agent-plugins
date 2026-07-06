@@ -31,6 +31,11 @@
       "name": "mental-models",
       "source": "./plugins/mental-models",
       "description": "Reasoning and problem-solving frameworks: five whys, graph thinking, and tit-for-tat."
+    },
+    {
+      "name": "second-brain",
+      "source": "./plugins/second-brain",
+      "description": "Obsidian second-brain workflows: capture, weekly review, weekly planning, and vault curation."
     }
   ]
 }
