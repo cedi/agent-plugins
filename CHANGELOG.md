@@ -4,6 +4,13 @@ All notable changes to this project are documented here. This file is maintained
 automatically by [release-please](https://github.com/googleapis/release-please)
 from [Conventional Commits](https://www.conventionalcommits.org/).
 
+## [3.1.1](https://github.com/cedi/agent-plugins/compare/v3.1.0...v3.1.1) (2026-07-06)
+
+
+### Skills
+
+* weave first-principles, systems, and game-theory lenses into second-brain skills ([3881b94](https://github.com/cedi/agent-plugins/commit/3881b94341968bb7a62a17f5f600e745ff6da689))
+
 ## [3.1.0](https://github.com/cedi/agent-plugins/compare/v3.0.0...v3.1.0) (2026-07-06)
 
 
