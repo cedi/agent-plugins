@@ -12,6 +12,9 @@ skills themselves carry nothing personal.
 - `vault-weekly-planning` — pull live commitments and deadlines and prioritize the
   week (forward, interactive).
 - `vault-curate` — vault health report: orphans, dead links, frontmatter, tags.
+- `vault-ask` — answer a question from the vault with cited notes (read-only).
+- `vault-link` — propose missing wikilinks to densify the graph.
+- `vault-moc` — refresh a Map of Content: state-of-topic synthesis plus structure.
 
 ## Setup
 
@@ -58,3 +61,6 @@ prompt). Configure the runner with `OBS_VAULT` (and optionally `CLAUDE_BIN`,
   occurrence).
 - `vault-weekly-planning`'s Datadog on-call step can fall back to a `pup` CLI helper
   if `sources.datadog_fallback_pup` is set; that helper is optional and org-specific.
+- Several skills apply the `mental-models` plugin's `five-why`, `graph-thinking`, and
+  `tit-for-tat` lenses where they sharpen reasoning. Install that plugin alongside for
+  the full method; the inline guidance stands alone without it.

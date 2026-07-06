@@ -21,7 +21,7 @@ Cursor**.
 | **tpm** | jira-cli | — | — |
 | **product-design** | cognitive-load, fogg-behavior-mode, trust-psychology | — | — |
 | **mental-models** | five-why, graph-thinking, tit-for-tat | — | talk |
-| **second-brain** | vault-capture, vault-weekly-review, vault-weekly-planning, vault-curate | — | — |
+| **second-brain** | vault-capture, vault-weekly-review, vault-weekly-planning, vault-curate, vault-ask, vault-link, vault-moc | — | — |
 
 ## Install
 

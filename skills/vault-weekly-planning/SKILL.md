@@ -81,8 +81,12 @@ Group everything into four buckets:
 1. Commitments: things the user told someone they would do. Highest accountability.
 2. Deadlines this week: due dates, cadence tasks, on-call, meeting prep.
 3. Unblocking others: review requests, questions and threads awaiting the user.
-4. High-leverage: big-rock project work aligned to current projects and, if set,
-   the `conventions.career_framework` dimensions.
+   Weight by reciprocity (the tit-for-tat lens): favor unblocking the people who
+   reliably unblock you.
+4. High-leverage: the work that unblocks or amplifies the most downstream. Find the
+   leverage point rather than the loudest item (the graph-thinking lens: centrality,
+   bottlenecks, second-order effects), aligned to current projects and, if set, the
+   `conventions.career_framework` dimensions.
 
 Then recommend a focused top 3 to 5 for the week and a short carry-over/watch list.
 Call out conflicts honestly (an on-call week stacked with commitments, or more due

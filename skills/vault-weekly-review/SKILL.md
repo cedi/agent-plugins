@@ -62,8 +62,13 @@ source so the user can check it.
 1. Target file: `<paths.impact_log_dir>/YYYY-MM.md` (month granularity). If missing,
    create it with the log frontmatter from the conventions file.
 2. Lead each entry with outcome and scope (what changed, who it helped, the
-   reliability or business impact), not a task list. If `conventions.career_framework`
-   is set (a promotion ladder), tie each entry to the dimension it demonstrates.
+   reliability or business impact), not a task list. Frame impact from first
+   principles: name the problem the work actually solved and its second-order
+   effects, what it unblocked or prevented downstream (the graph-thinking
+   first-principles and second-order lenses). For an incident or failure entry, give
+   the root cause, not the symptom (the five-why approach). If
+   `conventions.career_framework` is set (a promotion ladder), tie each entry to the
+   dimension it demonstrates.
 3. Timestamp lines with the inline date tag (`#YYYY-MM-DD`) per the log convention.
 4. Follow the vault writing style from the conventions file.
 5. Wikilink people only when a `People/` note exists; otherwise plain text. Link
