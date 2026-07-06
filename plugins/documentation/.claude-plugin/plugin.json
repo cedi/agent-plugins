@@ -1,7 +1,7 @@
 {
   "name": "documentation",
   "description": "Documentation authoring workflows: co-authoring docs and strategic design documents.",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "author": {
     "name": "cedi",
     "email": "github@specht-labs.de"
