@@ -4,6 +4,14 @@ All notable changes to this project are documented here. This file is maintained
 automatically by [release-please](https://github.com/googleapis/release-please)
 from [Conventional Commits](https://www.conventionalcommits.org/).
 
+## [3.1.0](https://github.com/cedi/agent-plugins/compare/v3.0.0...v3.1.0) (2026-07-06)
+
+
+### Features
+
+* add second-brain plugin (Obsidian vault capture, review, planning, curation) ([f37d14c](https://github.com/cedi/agent-plugins/commit/f37d14cc9265e7b8f3438ad642bdd52c9fb32824))
+* add second-brain plugin (Obsidian vault capture, review, planning, curation) ([09bc148](https://github.com/cedi/agent-plugins/commit/09bc1481e6f23ebd2ad7b1d07f13dcc8c01d8b76))
+
 ## [3.0.0](https://github.com/cedi/agent-plugins/compare/v2.0.0...v3.0.0) (2026-06-29)
 
 

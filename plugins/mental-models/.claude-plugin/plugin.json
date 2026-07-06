@@ -1,7 +1,7 @@
 {
   "name": "mental-models",
   "description": "Reasoning and problem-solving frameworks: five whys, graph thinking, and tit-for-tat.",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "author": {
     "name": "cedi",
     "email": "github@specht-labs.de"
