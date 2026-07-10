@@ -2,6 +2,7 @@
 # After cloning: `mise install && mise run validate`
 
 [tools]
+node = "22.17.1"
 # Validator runtime. Pinned exact for reproducibility across CI and local dev;
 # the validator is standard-library only, so no extra packages are needed.
 python = "3.12.12"

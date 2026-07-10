@@ -27,14 +27,15 @@ A `!` suffix or `BREAKING CHANGE:` footer triggers a major bump, e.g.
 - **Agent** (Claude Code only): add `plugins/<plugin>/agents/<name>.md`.
 - **Output style** (Claude Code only): add `plugins/<plugin>/output-styles/<name>.md`.
 
-If you add a new plugin, list it in `.claude-plugin/marketplace.json` and add its
-`plugin.json` version to `release-please-config.json` `extra-files`.
+If you add a new plugin, list it in `.claude-plugin/marketplace.json`, add its
+`.claude-plugin/plugin.json` version to `release-please-config.json` `extra-files`,
+and run `npm run sync` to regenerate the Cursor and Codex manifests.
 
 ## Validate locally
 
-```
-pip install pyyaml
+```bash
 python3 scripts/validate.py
+npm run check:sync
 ```
 
 CI runs the same validator on every push and pull request.

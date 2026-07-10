@@ -1,0 +1,35 @@
+{
+  "name": "tpm",
+  "version": "3.1.1",
+  "description": "Technical program management workflows, including non-interactive Jira automation.",
+  "author": {
+    "name": "cedi",
+    "email": "github@specht-labs.de"
+  },
+  "homepage": "https://github.com/cedi/agent-plugins",
+  "repository": "https://github.com/cedi/agent-plugins",
+  "keywords": [
+    "codex",
+    "cursor"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "TPM",
+    "shortDescription": "Technical program management workflows, including non-interactive Jira automation.",
+    "longDescription": "Technical program management workflows, including non-interactive Jira automation.",
+    "developerName": "cedi",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/cedi/agent-plugins",
+    "defaultPrompt": [
+      "Turn this plan into linked Jira issues.",
+      "Create a task breakdown for this program.",
+      "Review this delivery plan and find gaps."
+    ],
+    "brandColor": "#1273EA",
+    "screenshots": []
+  }
+}

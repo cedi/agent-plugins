@@ -1,0 +1,35 @@
+{
+  "name": "git-workflows",
+  "version": "3.1.1",
+  "description": "Git and GitHub workflows: changelog generation, PR creation, and PR review.",
+  "author": {
+    "name": "cedi",
+    "email": "github@specht-labs.de"
+  },
+  "homepage": "https://github.com/cedi/agent-plugins",
+  "repository": "https://github.com/cedi/agent-plugins",
+  "keywords": [
+    "codex",
+    "cursor"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "GIT Workflows",
+    "shortDescription": "Git and GitHub workflows: changelog generation, PR creation, and PR review.",
+    "longDescription": "Git and GitHub workflows: changelog generation, PR creation, and PR review.",
+    "developerName": "cedi",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/cedi/agent-plugins",
+    "defaultPrompt": [
+      "Review this pull request and post inline comments.",
+      "Draft a pull request description from this diff.",
+      "Turn recent commits into release notes."
+    ],
+    "brandColor": "#1273EA",
+    "screenshots": []
+  }
+}

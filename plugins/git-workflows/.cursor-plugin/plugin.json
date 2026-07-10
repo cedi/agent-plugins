@@ -1,0 +1,9 @@
+{
+  "name": "git-workflows",
+  "description": "Git and GitHub workflows: changelog generation, PR creation, and PR review.",
+  "version": "3.1.1",
+  "author": {
+    "name": "cedi",
+    "email": "github@specht-labs.de"
+  }
+}

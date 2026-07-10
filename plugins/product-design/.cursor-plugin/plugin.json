@@ -1,0 +1,9 @@
+{
+  "name": "product-design",
+  "description": "Product and UX design workflows grounded in psychology: cognitive load, behavior design, and trust.",
+  "version": "3.1.1",
+  "author": {
+    "name": "cedi",
+    "email": "github@specht-labs.de"
+  }
+}

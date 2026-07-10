@@ -16,5 +16,8 @@ jobs:
       # dev run the same toolchain.
       - uses: jdx/mise-action@v2
 
+      - name: Check generated Cursor and Codex manifests
+        run: node scripts/sync-vendor-manifests.mjs --check
+
       - name: Validate marketplace, plugins, and skills
         run: mise run validate

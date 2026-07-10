@@ -1,0 +1,9 @@
+{
+  "name": "cedi-agent-plugins",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sync": "node scripts/sync-vendor-manifests.mjs",
+    "check:sync": "node scripts/sync-vendor-manifests.mjs --check"
+  }
+}

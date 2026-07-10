@@ -1,0 +1,44 @@
+{
+  "name": "cedi-agent-plugins",
+  "owner": {
+    "name": "cedi",
+    "email": "github@specht-labs.de"
+  },
+  "metadata": {
+    "description": "Cedi's marketplace for reusable Claude Code agent skills and workflows",
+    "version": "3.1.1",
+    "pluginRoot": "plugins"
+  },
+  "plugins": [
+    {
+      "name": "git-workflows",
+      "source": "git-workflows",
+      "description": "Git and GitHub workflows: changelog generation, PR creation, and PR review."
+    },
+    {
+      "name": "documentation",
+      "source": "documentation",
+      "description": "Documentation authoring workflows: co-authoring docs and strategic design documents."
+    },
+    {
+      "name": "tpm",
+      "source": "tpm",
+      "description": "Technical program management workflows, including non-interactive Jira automation."
+    },
+    {
+      "name": "product-design",
+      "source": "product-design",
+      "description": "Product and UX design workflows grounded in psychology: cognitive load, behavior design, and trust."
+    },
+    {
+      "name": "mental-models",
+      "source": "mental-models",
+      "description": "Reasoning and problem-solving frameworks: five whys, graph thinking, and tit-for-tat."
+    },
+    {
+      "name": "second-brain",
+      "source": "second-brain",
+      "description": "Obsidian second-brain workflows: capture, weekly review, weekly planning, and vault curation."
+    }
+  ]
+}

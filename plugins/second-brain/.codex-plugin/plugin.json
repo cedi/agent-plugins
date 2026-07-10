@@ -1,0 +1,35 @@
+{
+  "name": "second-brain",
+  "version": "3.1.1",
+  "description": "Obsidian second-brain workflows: capture, weekly review, weekly planning, and vault curation, driven by a vault config note.",
+  "author": {
+    "name": "cedi",
+    "email": "github@specht-labs.de"
+  },
+  "homepage": "https://github.com/cedi/agent-plugins",
+  "repository": "https://github.com/cedi/agent-plugins",
+  "keywords": [
+    "codex",
+    "cursor"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Second Brain",
+    "shortDescription": "Obsidian second-brain workflows: capture, weekly review, weekly planning, and vault curation, dri...",
+    "longDescription": "Obsidian second-brain workflows: capture, weekly review, weekly planning, and vault curation, driven by a vault config note.",
+    "developerName": "cedi",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/cedi/agent-plugins",
+    "defaultPrompt": [
+      "Capture this into my vault.",
+      "Draft a weekly review from recent notes.",
+      "Plan my week from the current vault state."
+    ],
+    "brandColor": "#1273EA",
+    "screenshots": []
+  }
+}

@@ -2,10 +2,10 @@
 #
 # install.sh — wire this repo's Agent Skills into the tools that read them.
 #
-# All four supported tools understand the open Agent Skills standard: a flat
-# <name>/SKILL.md directory. Codex, OpenCode, and Cursor all read
-# ~/.agents/skills, so a single per-skill symlink farm there covers all three.
-# Claude Code is handled separately via the plugin marketplace (see README).
+# OpenCode still reads the open Agent Skills standard directly from a flat
+# <name>/SKILL.md directory. Codex and Cursor now consume this repo via the
+# generated plugin marketplace manifests instead of the raw skill tree.
+# Claude Code is handled separately via the canonical plugin marketplace.
 #
 # This script is:
 #   - idempotent  (re-running is safe; correct links are left as-is)
@@ -61,6 +61,8 @@ for t in "${targets[@]}"; do
 done
 
 echo
-echo "Codex, OpenCode, and Cursor read ~/.agents/skills — they're now wired."
+echo "OpenCode reads ~/.agents/skills -- they're now wired."
 echo "For Claude Code, add the marketplace:"
 echo "    claude plugin marketplace add $REPO"
+echo "For Codex, add the repo-local marketplace:"
+echo "    codex plugin marketplace add $REPO"

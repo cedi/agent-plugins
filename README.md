@@ -8,9 +8,10 @@ Reusable AI-agent configuration shared across **Claude Code, OpenCode, Codex, an
 Cursor**.
 
 - **Skills** are authored once in the open [Agent Skills](https://agentskills.io)
-  standard (a flat `<name>/SKILL.md` dir) and consumed by all four tools.
-- **Agents** and **output styles** are Claude Code-only components, bundled into
-  the plugins so Claude picks them up via the marketplace.
+  standard (a flat `<name>/SKILL.md` dir) and then exposed through generated
+  plugin manifests for Claude Code, Codex, and Cursor.
+- **Agents** and **output styles** remain Claude Code-only components, bundled
+  into the Claude plugin source manifests.
 
 ## Contents
 
@@ -35,14 +36,31 @@ claude plugin install git-workflows@cedi-agent-plugins
 Installs the skills **and** the bundled agent (`design-doc`) and output style
 (`talk`).
 
-### OpenCode / Codex / Cursor
+### Cursor
+
+Cursor consumes this repo as a plugin marketplace via the generated
+`.cursor-plugin/` index. Add the marketplace by repository (`cedi/agent-plugins`)
+and install the plugin from Cursor's plugin UI.
+
+### Codex
+
+Codex consumes the generated repo-local marketplace at
+`.agents/plugins/marketplace.json` and each plugin's `.codex-plugin/plugin.json`.
+Add the repo as a marketplace and install the plugin you want:
+
+```sh
+codex plugin marketplace add /path/to/agent-plugins
+codex plugin install git-workflows@cedi-agent-plugins
+```
+
+### OpenCode
 
 ```sh
 ./install.sh
 ```
 
-Per-skill symlinks the skills into `~/.agents/skills/`, the one global root all
-three read. Idempotent and additive — existing entries are left untouched.
+OpenCode still reads flat skills from `~/.agents/skills/`. The installer is
+idempotent and additive — existing entries are left untouched.
 
 > [!WARNING]
 > If `~/.agents/skills` is a symlink into your dotfiles, the installer refuses to
@@ -52,36 +70,43 @@ three read. Idempotent and additive — existing entries are left untouched.
 ## Layout
 
 ```
-skills/<name>/SKILL.md                # canonical skills — source of truth (all tools)
+skills/<name>/SKILL.md                # canonical skills — source of truth
 
-.claude-plugin/marketplace.json       # Claude Code marketplace manifest
+.claude-plugin/marketplace.json       # canonical marketplace index
+.cursor-plugin/marketplace.json       # generated Cursor marketplace
+.agents/plugins/marketplace.json      # generated Codex marketplace
 plugins/<plugin>/
-  .claude-plugin/plugin.json          # Claude Code plugin manifest
+  .claude-plugin/plugin.json          # canonical plugin manifest
+  .cursor-plugin/plugin.json          # generated Cursor plugin manifest
+  .codex-plugin/plugin.json           # generated Codex plugin manifest
   skills/<name> -> ../../../skills/<name>   # symlink to canonical (no duplication)
   agents/<name>.md                    # Claude-only subagents
   output-styles/<name>.md             # Claude-only output styles
 
-install.sh                            # wire skills into ~/.agents/skills
-scripts/validate.py                   # manifest + frontmatter + symlink validator
+install.sh                            # wire skills into ~/.agents/skills for OpenCode
+scripts/validate.py                   # canonical manifest + frontmatter validator
+scripts/sync-vendor-manifests.mjs     # generate Cursor/Codex manifests
 ```
 
 `plugins/*/skills/*` are symlinks into `skills/`, so each skill exists once.
 Within a marketplace install, Claude Code dereferences these symlinks into its
-plugin cache, so they work for remote installs too.
+plugin cache, so they work for remote installs too. Cursor and Codex now consume
+the same plugin directories through generated manifests instead of reading the
+flat skill tree directly.
 
 ## How each tool discovers skills
 
-| Tool | Global skill roots it scans |
+| Tool | Install path |
 |------|------|
-| Claude Code | `~/.claude/skills/`, or installed marketplace plugins |
+| Claude Code | Marketplace plugins from `.claude-plugin/` |
+| Cursor | Marketplace plugins from generated `.cursor-plugin/` |
+| Codex | Marketplace plugins from generated `.agents/plugins/marketplace.json` + `.codex-plugin/` |
 | OpenCode | `~/.config/opencode/skills/`, `~/.claude/skills/`, `~/.agents/skills/` |
-| Codex | `~/.agents/skills/` (follows symlinks) |
-| Cursor | `~/.agents/skills/`, `~/.cursor/skills/`, `~/.claude/skills/`, `~/.codex/skills/` |
 
-`~/.agents/skills/` is the one root Codex, OpenCode, and Cursor all read. Skills
-must stay flat — OpenCode and Claude Code do not recurse into category subfolders.
-Agents and output styles are **not** read by OpenCode/Codex/Cursor; they work only
-in Claude Code.
+`~/.agents/skills/` remains the shared flat-skill root for OpenCode and any
+manual local installs. Skills must stay flat — OpenCode and Claude Code do not
+recurse into category subfolders. Agents and output styles are **not** read by
+OpenCode/Codex/Cursor; they work only in Claude Code.
 
 ## Development
 
@@ -91,5 +116,13 @@ bumps the version in the marketplace and every `plugin.json`. CI validates every
 push and PR. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ```sh
-pip install pyyaml && python3 scripts/validate.py
+python3 scripts/validate.py
+npm run check:sync
+```
+
+After editing any canonical `.claude-plugin/` file, regenerate the derived
+Cursor and Codex manifests:
+
+```sh
+npm run sync
 ```

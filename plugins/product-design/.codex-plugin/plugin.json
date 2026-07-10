@@ -1,0 +1,35 @@
+{
+  "name": "product-design",
+  "version": "3.1.1",
+  "description": "Product and UX design workflows grounded in psychology: cognitive load, behavior design, and trust.",
+  "author": {
+    "name": "cedi",
+    "email": "github@specht-labs.de"
+  },
+  "homepage": "https://github.com/cedi/agent-plugins",
+  "repository": "https://github.com/cedi/agent-plugins",
+  "keywords": [
+    "codex",
+    "cursor"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Product Design",
+    "shortDescription": "Product and UX design workflows grounded in psychology: cognitive load, behavior design, and trust.",
+    "longDescription": "Product and UX design workflows grounded in psychology: cognitive load, behavior design, and trust.",
+    "developerName": "cedi",
+    "category": "Design",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/cedi/agent-plugins",
+    "defaultPrompt": [
+      "Critique this flow using product design principles.",
+      "Reduce friction in this onboarding experience.",
+      "Apply trust and behavior design to this screen."
+    ],
+    "brandColor": "#1273EA",
+    "screenshots": []
+  }
+}

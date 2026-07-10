@@ -1,0 +1,35 @@
+{
+  "name": "documentation",
+  "version": "3.1.1",
+  "description": "Documentation authoring workflows: co-authoring docs and strategic design documents.",
+  "author": {
+    "name": "cedi",
+    "email": "github@specht-labs.de"
+  },
+  "homepage": "https://github.com/cedi/agent-plugins",
+  "repository": "https://github.com/cedi/agent-plugins",
+  "keywords": [
+    "codex",
+    "cursor"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Documentation",
+    "shortDescription": "Documentation authoring workflows: co-authoring docs and strategic design documents.",
+    "longDescription": "Documentation authoring workflows: co-authoring docs and strategic design documents.",
+    "developerName": "cedi",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/cedi/agent-plugins",
+    "defaultPrompt": [
+      "Draft a design doc from these notes.",
+      "Turn this proposal into a structured document.",
+      "Stress-test this document with strategic design questions."
+    ],
+    "brandColor": "#1273EA",
+    "screenshots": []
+  }
+}
