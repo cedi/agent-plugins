@@ -15,7 +15,7 @@
     {
       "name": "documentation",
       "source": "./plugins/documentation",
-      "description": "Documentation authoring workflows: co-authoring docs and strategic design documents."
+      "description": "Documentation authoring workflows: co-authoring docs, strategic design documents, and polished editable SVG diagrams."
     },
     {
       "name": "tpm",

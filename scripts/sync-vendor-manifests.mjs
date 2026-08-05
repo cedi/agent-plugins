@@ -33,7 +33,7 @@ const pluginMetadata = {
     category: "Productivity",
     defaultPrompt: [
       "Draft a design doc from these notes.",
-      "Turn this proposal into a structured document.",
+      "Turn this Mermaid diagram into a polished editable SVG.",
       "Stress-test this document with strategic design questions.",
     ],
   },

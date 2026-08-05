@@ -18,7 +18,7 @@ Cursor**.
 | Plugin | Skills | Agents | Output styles |
 |--------|--------|--------|---------------|
 | **git-workflows** | changelog-generator, pr-review, pull-request, sre-code-reviewer | — | — |
-| **documentation** | documentation, strategic-design-doc | design-doc | — |
+| **documentation** | documentation, strategic-design-doc, refine-mermaid-svg | design-doc | — |
 | **tpm** | jira-cli | — | — |
 | **product-design** | cognitive-load, fogg-behavior-mode, trust-psychology | — | — |
 | **mental-models** | five-why, graph-thinking, tit-for-tat | — | talk |

@@ -1,0 +1,21 @@
+{
+  "theme": "base",
+  "securityLevel": "strict",
+  "flowchart": {
+    "curve": "basis",
+    "htmlLabels": false,
+    "nodeSpacing": 48,
+    "rankSpacing": 64,
+    "useMaxWidth": false
+  },
+  "themeVariables": {
+    "background": "#071522",
+    "primaryColor": "#14283F",
+    "primaryTextColor": "#F4F8FF",
+    "primaryBorderColor": "#59D5FF",
+    "lineColor": "#7F9AB6",
+    "secondaryColor": "#0D2133",
+    "tertiaryColor": "#102A40",
+    "fontFamily": "Inter, ui-sans-serif, system-ui, sans-serif"
+  }
+}

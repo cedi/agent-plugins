@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+     width="1600" height="900" viewBox="0 0 1600 900"
+     role="img" aria-labelledby="diagram-title-node diagram-description">
+  <title id="diagram-title-node">From Mermaid sketch to editable SVG</title>
+  <desc id="diagram-description">A playful illustrated pipeline showing a Mermaid blueprint becoming a polished, validated, layered Inkscape SVG.</desc>
+  <sodipodi:namedview id="namedview-meta-example" pagecolor="#071522" bordercolor="#42617f" inkscape:document-units="px" showgrid="false"/>
+  <defs id="definitions">
+    <linearGradient id="gradient-canvas" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#06131f"/>
+      <stop offset="0.55" stop-color="#0a1d2d"/>
+      <stop offset="1" stop-color="#10293a"/>
+    </linearGradient>
+    <linearGradient id="gradient-atelier" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#103a3c"/>
+      <stop offset="1" stop-color="#102a40"/>
+    </linearGradient>
+    <pattern id="pattern-dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#7ea5c6" opacity="0.12"/>
+    </pattern>
+    <filter id="filter-shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="9" result="blur"/>
+      <feOffset in="blur" dx="0" dy="10" result="offset"/>
+      <feFlood flood-color="#000814" flood-opacity="0.52" result="color"/>
+      <feComposite in="color" in2="offset" operator="in" result="shadow"/>
+      <feMerge><feMergeNode in="shadow"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="filter-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="marker-arrow-cyan" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 1,1 L 11,6 L 1,11 Z" fill="#59d5ff"/>
+    </marker>
+    <marker id="marker-arrow-amber" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 1,1 L 11,6 L 1,11 Z" fill="#f4b858"/>
+    </marker>
+  </defs>
+
+  <g id="layer-background" inkscape:groupmode="layer" inkscape:label="01 Background">
+    <rect id="canvas" x="0" y="0" width="1600" height="900" fill="url(#gradient-canvas)"/>
+    <rect id="canvas-texture" x="0" y="0" width="1600" height="900" fill="url(#pattern-dots)"/>
+    <circle id="ambient-glow-cyan" cx="815" cy="430" r="330" fill="#24bde8" opacity="0.05"/>
+    <circle id="ambient-glow-green" cx="1040" cy="480" r="260" fill="#48e0b2" opacity="0.04"/>
+  </g>
+
+  <g id="layer-header" inkscape:groupmode="layer" inkscape:label="02 Header">
+    <g id="header-copy" inkscape:label="Header — Diagram title">
+      <text id="diagram-kicker" x="72" y="62" fill="#59d5ff" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="700" letter-spacing="3" data-role="free-text">THE SVG ATELIER</text>
+      <text id="diagram-title" x="72" y="112" fill="#f4f8ff" font-family="Inter,system-ui,sans-serif" font-size="40" font-weight="760" data-role="free-text">From Mermaid sketch to editable SVG</text>
+      <text id="diagram-subtitle" x="72" y="148" fill="#a8bcd2" font-family="Inter,system-ui,sans-serif" font-size="17" data-role="free-text">Use Mermaid for meaning. Use deliberate SVG craft for the artifact people will keep.</text>
+    </g>
+    <g id="badge-meta-example" inkscape:label="Badge — Meta example">
+      <rect id="badge-meta-example-surface" x="1327" y="72" width="201" height="40" rx="20" fill="#123a35" stroke="#48e0b2" stroke-width="1.5"/>
+      <circle id="badge-meta-example-dot" cx="1353" cy="92" r="5" fill="#48e0b2"/>
+      <text id="badge-meta-example-text" x="1369" y="97" fill="#8cf4d4" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="700" letter-spacing="1.1" data-container="badge-meta-example-surface" data-padding="10">META EXAMPLE</text>
+    </g>
+  </g>
+
+  <g id="layer-connectors" inkscape:groupmode="layer" inkscape:label="03 Flow Connectors">
+    <g id="connector-blueprint-to-reference" inkscape:label="Connector — Blueprint to reference">
+      <path id="connector-blueprint-to-reference-halo" d="M 338,420 H 394" fill="none" stroke="#071522" stroke-width="9"/>
+      <path id="connector-blueprint-to-reference-path" d="M 338,420 H 394" fill="none" stroke="#59d5ff" stroke-width="3" marker-end="url(#marker-arrow-cyan)"/>
+    </g>
+    <g id="connector-reference-to-atelier" inkscape:label="Connector — Reference to atelier">
+      <path id="connector-reference-to-atelier-halo" d="M 650,420 H 702" fill="none" stroke="#071522" stroke-width="9"/>
+      <path id="connector-reference-to-atelier-path" d="M 650,420 H 702" fill="none" stroke="#59d5ff" stroke-width="3" marker-end="url(#marker-arrow-cyan)"/>
+    </g>
+    <g id="connector-atelier-to-output" inkscape:label="Connector — Atelier to output">
+      <path id="connector-atelier-to-output-halo" d="M 1134,420 H 1186" fill="none" stroke="#071522" stroke-width="9"/>
+      <path id="connector-atelier-to-output-path" d="M 1134,420 H 1186" fill="none" stroke="#48e0b2" stroke-width="3" marker-end="url(#marker-arrow-cyan)"/>
+    </g>
+    <g id="connector-validation-feedback" inkscape:label="Connector — Validation feedback loop">
+      <path id="connector-validation-feedback-path" d="M 1360,598 V 700 H 920 V 590" fill="none" stroke="#f4b858" stroke-width="2.5" stroke-dasharray="8 9" marker-end="url(#marker-arrow-amber)"/>
+    </g>
+  </g>
+
+  <g id="layer-stage-cards" inkscape:groupmode="layer" inkscape:label="04 Stage Cards">
+    <g id="card-mermaid-blueprint" inkscape:label="Card — Mermaid blueprint">
+      <rect id="card-mermaid-blueprint-surface" x="72" y="310" width="266" height="220" rx="26" fill="#14283f" stroke="#42617f" stroke-width="2" filter="url(#filter-shadow)"/>
+      <g id="icon-mermaid-blueprint" inkscape:label="Icon — Mermaid blueprint">
+        <rect x="102" y="344" width="52" height="52" rx="16" fill="#12364c" stroke="#59d5ff" stroke-width="1.5"/>
+        <circle cx="118" cy="360" r="5" fill="none" stroke="#59d5ff" stroke-width="2"/>
+        <circle cx="138" cy="380" r="5" fill="none" stroke="#59d5ff" stroke-width="2"/>
+        <path d="M 122,364 L 134,376 M 118,365 V 382 H 133" fill="none" stroke="#59d5ff" stroke-width="2" stroke-linecap="round"/>
+      </g>
+      <text id="card-mermaid-blueprint-step" x="176" y="360" fill="#7fdfff" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="700" letter-spacing="1.4" data-container="card-mermaid-blueprint-surface" data-padding="24">01 · BLUEPRINT</text>
+      <text id="card-mermaid-blueprint-title" x="102" y="430" fill="#f4f8ff" font-family="Inter,system-ui,sans-serif" font-size="21" font-weight="720" data-container="card-mermaid-blueprint-surface" data-padding="24">Write the meaning</text>
+      <text id="card-mermaid-blueprint-body" x="102" y="465" fill="#a8bcd2" font-family="Inter,system-ui,sans-serif" font-size="14" data-container="card-mermaid-blueprint-surface" data-padding="24">
+        <tspan x="102" dy="0">Nodes, edges, direction,</tspan>
+        <tspan x="102" dy="21">and the story that matters.</tspan>
+      </text>
+    </g>
+
+    <g id="card-reference-render" inkscape:label="Card — Reference render">
+      <rect id="card-reference-render-surface" x="394" y="310" width="256" height="220" rx="26" fill="#14283f" stroke="#42617f" stroke-width="2" filter="url(#filter-shadow)"/>
+      <g id="icon-reference-render" inkscape:label="Icon — Reference render">
+        <rect x="424" y="344" width="52" height="52" rx="16" fill="#12364c" stroke="#59d5ff" stroke-width="1.5"/>
+        <rect x="437" y="357" width="26" height="22" rx="3" fill="none" stroke="#59d5ff" stroke-width="2"/>
+        <path d="M 443,385 H 457 M 450,379 V 385" fill="none" stroke="#59d5ff" stroke-width="2" stroke-linecap="round"/>
+      </g>
+      <text id="card-reference-render-step" x="498" y="360" fill="#7fdfff" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="700" letter-spacing="1.2" data-container="card-reference-render-surface" data-padding="24">02 · REFERENCE</text>
+      <text id="card-reference-render-title" x="424" y="430" fill="#f4f8ff" font-family="Inter,system-ui,sans-serif" font-size="21" font-weight="720" data-container="card-reference-render-surface" data-padding="24">Render the map</text>
+      <text id="card-reference-render-body" x="424" y="465" fill="#a8bcd2" font-family="Inter,system-ui,sans-serif" font-size="14" data-container="card-reference-render-surface" data-padding="24">
+        <tspan x="424" dy="0">Capture semantics and a</tspan>
+        <tspan x="424" dy="21">first-pass spatial rhythm.</tspan>
+      </text>
+    </g>
+
+    <g id="card-svg-atelier" inkscape:label="Card — SVG atelier">
+      <rect id="card-svg-atelier-surface" x="702" y="228" width="432" height="382" rx="32" fill="url(#gradient-atelier)" stroke="#48e0b2" stroke-width="2.5" filter="url(#filter-shadow)"/>
+      <rect id="card-svg-atelier-inner-stroke" x="713" y="239" width="410" height="360" rx="25" fill="none" stroke="#8cf4d4" stroke-opacity="0.18"/>
+      <g id="icon-svg-atelier" inkscape:label="Icon — SVG atelier">
+        <circle cx="754" cy="278" r="23" fill="#123a35" stroke="#48e0b2" stroke-width="1.5"/>
+        <path d="M 743,286 L 760,269 M 757,267 L 763,273 M 740,289 L 746,287" fill="none" stroke="#48e0b2" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M 746,268 C 750,263 758,263 762,267" fill="none" stroke="#a5f7df" stroke-width="2" stroke-linecap="round"/>
+      </g>
+      <text id="card-svg-atelier-step" x="792" y="266" fill="#8cf4d4" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="700" letter-spacing="1.5" data-container="card-svg-atelier-surface" data-padding="28">03 · CRAFT</text>
+      <text id="card-svg-atelier-title" x="792" y="293" fill="#f4f8ff" font-family="Inter,system-ui,sans-serif" font-size="23" font-weight="760" data-container="card-svg-atelier-surface" data-padding="28">The SVG atelier</text>
+
+      <g id="atelier-task-compose" inkscape:label="Atelier task — Compose hierarchy">
+        <rect id="atelier-task-compose-surface" x="740" y="326" width="356" height="66" rx="17" fill="#112d3c" stroke="#3d7180"/>
+        <circle cx="772" cy="359" r="15" fill="#173f4b"/>
+        <path d="M 765,359 H 779 M 772,352 V 366" stroke="#59d5ff" stroke-width="2.3" stroke-linecap="round"/>
+        <text id="atelier-task-compose-title" x="802" y="354" fill="#f4f8ff" font-family="Inter,system-ui,sans-serif" font-size="15" font-weight="700" data-container="atelier-task-compose-surface" data-padding="14">Compose hierarchy</text>
+        <text id="atelier-task-compose-body" x="802" y="375" fill="#9fb7cc" font-family="Inter,system-ui,sans-serif" font-size="12.5" data-container="atelier-task-compose-surface" data-padding="14">Panels, cards, icons, flow</text>
+      </g>
+      <g id="atelier-task-wrap" inkscape:label="Atelier task — Wrap and pad text">
+        <rect id="atelier-task-wrap-surface" x="740" y="410" width="356" height="66" rx="17" fill="#112d3c" stroke="#3d7180"/>
+        <circle cx="772" cy="443" r="15" fill="#173f4b"/>
+        <path d="M 765,438 H 780 M 765,443 H 776 M 765,448 H 781" stroke="#48e0b2" stroke-width="2" stroke-linecap="round"/>
+        <text id="atelier-task-wrap-title" x="802" y="438" fill="#f4f8ff" font-family="Inter,system-ui,sans-serif" font-size="15" font-weight="700" data-container="atelier-task-wrap-surface" data-padding="14">Wrap and pad every label</text>
+        <text id="atelier-task-wrap-body" x="802" y="459" fill="#9fb7cc" font-family="Inter,system-ui,sans-serif" font-size="12.5" data-container="atelier-task-wrap-surface" data-padding="14">Pure text + explicit tspans</text>
+      </g>
+      <g id="atelier-task-structure" inkscape:label="Atelier task — Structure objects">
+        <rect id="atelier-task-structure-surface" x="740" y="494" width="356" height="92" rx="17" fill="#112d3c" stroke="#3d7180"/>
+        <circle cx="772" cy="533" r="15" fill="#173f4b"/>
+        <path d="M 765,526 H 779 V 540 H 765 Z M 768,530 H 782 V 543" fill="none" stroke="#f4b858" stroke-width="2" stroke-linejoin="round"/>
+        <text id="atelier-task-structure-title" x="802" y="525" fill="#f4f8ff" font-family="Inter,system-ui,sans-serif" font-size="15" font-weight="700" data-container="atelier-task-structure-surface" data-padding="14">Structure for future editors</text>
+        <text id="atelier-task-structure-body" x="802" y="548" fill="#9fb7cc" font-family="Inter,system-ui,sans-serif" font-size="12.5" data-container="atelier-task-structure-surface" data-padding="14">
+          <tspan x="802" dy="0">Named layers, groups, IDs,</tspan>
+          <tspan x="802" dy="18">connectors, and reusable defs</tspan>
+        </text>
+      </g>
+    </g>
+
+    <g id="card-editable-output" inkscape:label="Card — Editable output">
+      <rect id="card-editable-output-surface" x="1186" y="310" width="342" height="288" rx="28" fill="#14283f" stroke="#59d5ff" stroke-width="2" filter="url(#filter-shadow)"/>
+      <g id="icon-editable-output" inkscape:label="Icon — Editable output">
+        <rect x="1218" y="344" width="54" height="54" rx="16" fill="#12364c" stroke="#59d5ff" stroke-width="1.5"/>
+        <path d="M 1231,357 H 1259 V 385 H 1231 Z" fill="none" stroke="#59d5ff" stroke-width="2"/>
+        <path d="M 1237,365 H 1253 M 1237,371 H 1253 M 1237,377 H 1248" stroke="#a9ebff" stroke-width="2" stroke-linecap="round"/>
+      </g>
+      <text id="card-editable-output-step" x="1292" y="360" fill="#7fdfff" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="700" letter-spacing="1.25" data-container="card-editable-output-surface" data-padding="26">04 · MASTERPIECE</text>
+      <text id="card-editable-output-title" x="1218" y="436" fill="#f4f8ff" font-family="Inter,system-ui,sans-serif" font-size="22" font-weight="740" data-container="card-editable-output-surface" data-padding="26">Pretty. Useful. Editable.</text>
+      <text id="card-editable-output-body" x="1218" y="472" fill="#a8bcd2" font-family="Inter,system-ui,sans-serif" font-size="14" data-container="card-editable-output-surface" data-padding="26">
+        <tspan x="1218" dy="0">Open it in Inkscape and every</tspan>
+        <tspan x="1218" dy="21">meaningful object is ready to</tspan>
+        <tspan x="1218" dy="21">select, understand, and change.</tspan>
+      </text>
+      <g id="badge-validation-passed" inkscape:label="Badge — Validation passed">
+        <rect id="badge-validation-passed-surface" x="1218" y="545" width="223" height="34" rx="17" fill="#123a35" stroke="#48e0b2"/>
+        <circle cx="1239" cy="562" r="5" fill="#48e0b2"/>
+        <text id="badge-validation-passed-text" x="1253" y="567" fill="#8cf4d4" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="700" letter-spacing="0.8" data-container="badge-validation-passed-surface" data-padding="8">TEXT BOUNDS PASSED</text>
+      </g>
+    </g>
+  </g>
+
+  <g id="layer-annotations" inkscape:groupmode="layer" inkscape:label="05 Annotations">
+    <g id="annotation-reference-not-final" inkscape:label="Annotation — Reference is not final">
+      <rect id="annotation-reference-not-final-surface" x="409" y="550" width="226" height="60" rx="16" fill="#0b1d2b" stroke="#294965"/>
+      <text id="annotation-reference-not-final-text" x="430" y="579" fill="#8fa9bf" font-family="Inter,system-ui,sans-serif" font-size="12.5" data-container="annotation-reference-not-final-surface" data-padding="10">
+        <tspan x="430" dy="0">A map to read—not a DOM</tspan>
+        <tspan x="430" dy="17">to preserve.</tspan>
+      </text>
+    </g>
+    <g id="annotation-feedback-label" inkscape:label="Annotation — Feedback label">
+      <rect id="annotation-feedback-label-surface" x="1032" y="681" width="219" height="38" rx="19" fill="#2f271b" stroke="#f4b858" stroke-width="1.3"/>
+      <text id="annotation-feedback-label-text" x="1052" y="705" fill="#ffd48a" font-family="Inter,system-ui,sans-serif" font-size="12.5" font-weight="700" letter-spacing="0.4" data-container="annotation-feedback-label-surface" data-padding="9">INSPECT · FIX · RENDER</text>
+    </g>
+  </g>
+
+  <g id="layer-footer" inkscape:groupmode="layer" inkscape:label="06 Footer Legend">
+    <line id="footer-rule" x1="72" y1="790" x2="1528" y2="790" stroke="#294965"/>
+    <g id="legend-semantic" inkscape:label="Legend — Semantic reference">
+      <circle cx="88" cy="834" r="6" fill="#59d5ff"/>
+      <text id="legend-semantic-text" x="106" y="839" fill="#9fb7cc" font-family="Inter,system-ui,sans-serif" font-size="13" data-role="free-text">semantic reference</text>
+    </g>
+    <g id="legend-craft" inkscape:label="Legend — Visual craft">
+      <circle cx="286" cy="834" r="6" fill="#48e0b2"/>
+      <text id="legend-craft-text" x="304" y="839" fill="#9fb7cc" font-family="Inter,system-ui,sans-serif" font-size="13" data-role="free-text">visual craft</text>
+    </g>
+    <g id="legend-validation" inkscape:label="Legend — Validation loop">
+      <circle cx="446" cy="834" r="6" fill="#f4b858"/>
+      <text id="legend-validation-text" x="464" y="839" fill="#9fb7cc" font-family="Inter,system-ui,sans-serif" font-size="13" data-role="free-text">validation loop</text>
+    </g>
+    <text id="footer-note" x="1528" y="839" text-anchor="end" fill="#6f8aa2" font-family="Inter,system-ui,sans-serif" font-size="12.5" data-role="free-text">Mermaid gives the grammar · SVG gives the artifact</text>
+  </g>
+</svg>

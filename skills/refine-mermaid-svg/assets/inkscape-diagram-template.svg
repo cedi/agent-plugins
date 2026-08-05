@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+     width="1600" height="900" viewBox="0 0 1600 900"
+     role="img" aria-labelledby="template-title template-description">
+  <title id="template-title">Editable architecture diagram template</title>
+  <desc id="template-description">A neutral starter with named Inkscape layers, a text-safe card, and an editable connector.</desc>
+  <sodipodi:namedview id="namedview-template" pagecolor="#071522" bordercolor="#42617f" inkscape:document-units="px" showgrid="false"/>
+  <defs id="definitions">
+    <linearGradient id="gradient-canvas" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071522"/>
+      <stop offset="1" stop-color="#0d2133"/>
+    </linearGradient>
+    <filter id="filter-card-shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="blur"/>
+      <feOffset in="blur" dx="0" dy="8" result="offset"/>
+      <feFlood flood-color="#000814" flood-opacity="0.45" result="color"/>
+      <feComposite in="color" in2="offset" operator="in" result="shadow"/>
+      <feMerge><feMergeNode in="shadow"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="marker-arrow-primary" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 1,1 L 11,6 L 1,11 Z" fill="#59d5ff"/>
+    </marker>
+  </defs>
+  <g id="layer-background" inkscape:groupmode="layer" inkscape:label="01 Background">
+    <rect id="canvas" x="0" y="0" width="1600" height="900" fill="url(#gradient-canvas)"/>
+  </g>
+  <g id="layer-header" inkscape:groupmode="layer" inkscape:label="02 Header">
+    <text id="diagram-title" x="72" y="86" fill="#f4f8ff" font-family="Inter,system-ui,sans-serif" font-size="40" font-weight="700" data-role="free-text">Diagram title</text>
+    <text id="diagram-subtitle" x="72" y="122" fill="#a8bcd2" font-family="Inter,system-ui,sans-serif" font-size="17" data-role="free-text">Replace this starter content with the real visual story.</text>
+  </g>
+  <g id="layer-panels" inkscape:groupmode="layer" inkscape:label="03 Stage Panels">
+    <g id="panel-stage-one" inkscape:label="Panel — Stage one">
+      <rect id="panel-stage-one-surface" x="72" y="180" width="1456" height="560" rx="32" fill="#0d2133" fill-opacity="0.7" stroke="#294965" stroke-width="2"/>
+    </g>
+  </g>
+  <g id="layer-connectors" inkscape:groupmode="layer" inkscape:label="04 Connectors">
+    <g id="connector-example" inkscape:label="Connector — Example flow">
+      <path id="connector-example-path" d="M 650,455 H 930" fill="none" stroke="#59d5ff" stroke-width="3" marker-end="url(#marker-arrow-primary)"/>
+    </g>
+  </g>
+  <g id="layer-cards" inkscape:groupmode="layer" inkscape:label="05 Cards">
+    <g id="card-example-source" inkscape:label="Card — Example source">
+      <rect id="card-example-source-surface" x="170" y="350" width="480" height="210" rx="24" fill="#14283f" stroke="#42617f" stroke-width="2" filter="url(#filter-card-shadow)"/>
+      <circle id="card-example-source-icon-disc" cx="226" cy="414" r="24" fill="#163b52" stroke="#59d5ff" stroke-width="2"/>
+      <path id="card-example-source-icon" d="M 215,414 H 237 M 226,403 V 425" fill="none" stroke="#59d5ff" stroke-width="3" stroke-linecap="round"/>
+      <text id="card-example-source-title" x="270" y="410" fill="#f4f8ff" font-family="Inter,system-ui,sans-serif" font-size="22" font-weight="700" data-container="card-example-source-surface" data-padding="28">Example source</text>
+      <text id="card-example-source-body" x="270" y="448" fill="#a8bcd2" font-family="Inter,system-ui,sans-serif" font-size="16" data-container="card-example-source-surface" data-padding="28">
+        <tspan x="270" dy="0">Use explicit tspans for intentional wrapping.</tspan>
+        <tspan x="270" dy="24">Keep every line inside the padded surface.</tspan>
+      </text>
+    </g>
+    <g id="card-example-output" inkscape:label="Card — Example output">
+      <rect id="card-example-output-surface" x="950" y="350" width="410" height="210" rx="24" fill="#123a35" stroke="#48e0b2" stroke-width="2" filter="url(#filter-card-shadow)"/>
+      <text id="card-example-output-title" x="994" y="420" fill="#f4f8ff" font-family="Inter,system-ui,sans-serif" font-size="22" font-weight="700" data-container="card-example-output-surface" data-padding="28">Editable output</text>
+      <text id="card-example-output-body" x="994" y="458" fill="#b8d8cf" font-family="Inter,system-ui,sans-serif" font-size="16" data-container="card-example-output-surface" data-padding="28">
+        <tspan x="994" dy="0">Named groups, stable IDs, and</tspan>
+        <tspan x="994" dy="24">renderer-verified text bounds.</tspan>
+      </text>
+    </g>
+  </g>
+  <g id="layer-annotations" inkscape:groupmode="layer" inkscape:label="06 Annotations">
+    <g id="badge-template" inkscape:label="Badge — Template">
+      <rect id="badge-template-surface" x="1340" y="62" width="188" height="38" rx="19" fill="#163c37" stroke="#48e0b2"/>
+      <text id="badge-template-text" x="1362" y="87" fill="#87f2d1" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="700" letter-spacing="1.4" data-container="badge-template-surface" data-padding="10">EDITABLE SVG</text>
+    </g>
+  </g>
+</svg>

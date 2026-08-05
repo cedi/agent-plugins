@@ -1,0 +1,15 @@
+flowchart LR
+    A["Write Mermaid<br/>nodes, edges, meaning"] --> B["Render reference SVG<br/>capture semantic layout"]
+    B --> C["SVG atelier<br/>rebuild visual hierarchy"]
+    C --> D["Structure for Inkscape<br/>layers, groups, stable IDs"]
+    D --> E["Validate and preview<br/>text bounds, XML, raster"]
+    E --> F["Share editable SVG<br/>beautiful and maintainable"]
+    E -. "iterate on failures" .-> C
+
+    classDef source fill:#183B52,stroke:#59D5FF,color:#F4F8FF
+    classDef craft fill:#163C37,stroke:#48E0B2,color:#F4F8FF
+    classDef verify fill:#47351D,stroke:#F4B858,color:#F4F8FF
+    class A,B source
+    class C,D craft
+    class E verify
+    class F source

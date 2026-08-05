@@ -1,0 +1,4 @@
+interface:
+  display_name: "Refine Mermaid SVG"
+  short_description: "Turn Mermaid diagrams into polished editable SVGs"
+  default_prompt: "Use $refine-mermaid-svg to turn this Mermaid diagram into a polished, text-safe, layered Inkscape SVG."
