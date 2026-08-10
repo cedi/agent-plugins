@@ -4,6 +4,14 @@ All notable changes to this project are documented here. This file is maintained
 automatically by [release-please](https://github.com/googleapis/release-please)
 from [Conventional Commits](https://www.conventionalcommits.org/).
 
+## [3.3.0](https://github.com/cedi/agent-plugins/compare/v3.2.0...v3.3.0) (2026-08-10)
+
+
+### Features
+
+* **pull-request:** add instructions for stacked PRs ([d22e6b5](https://github.com/cedi/agent-plugins/commit/d22e6b5aa5debd062ecc446123144f551d591376))
+* **vault-weekly-planning:** refine weekly planning skill ([020beaf](https://github.com/cedi/agent-plugins/commit/020beaf71ff47b6709e5c9030058c52935486f50))
+
 ## [3.2.0](https://github.com/cedi/agent-plugins/compare/v3.1.1...v3.2.0) (2026-08-05)
 
 
