@@ -233,6 +233,34 @@ EOF
 
 Always return the PR URL so the user can access it directly.
 
+## Stacked Pull Requests
+
+When a change is large enough to split into an ordered chain of smaller, reviewable layers, each depending on the one below it, use GitHub's native stacked pull request support (public preview as of July 2026) instead of managing the base branches by hand.
+
+Install the CLI extension once:
+
+```bash
+gh extension install github/gh-stack
+```
+
+Typical flow:
+
+```bash
+gh stack init                # start a stack rooted at the trunk branch
+# commit the first layer's changes
+gh stack add <branch-name>   # add the next layer on top, checks it out
+# commit that layer's changes
+gh stack submit               # push branches, open PRs, link them into a stack
+```
+
+Each PR in the stack targets the layer below it, so a reviewer opening any single PR sees only that layer's diff. GitHub adds a "stack map" at the top of each PR showing where it sits in the chain, so different reviewers can review different layers without blocking each other.
+
+Merging is stack-aware: `gh stack merge` lands the chosen PR and everything below it in one operation. Merge just a lower layer instead, and the PRs above it stay open and rebase and retarget automatically, no manual `gh pr edit --base` needed.
+
+Use `gh stack sync` to pull remote changes, cascade-rebase the whole chain, and push in one step, and `gh stack view` to see the stack's branches, PRs, and ordering.
+
+For a simple two-PR chain ("this cleanup PR, then this feature PR on top of it"), setting the second PR's base by hand with `gh pr edit --base <first-branch>` is still fine. GitHub has long retargeted a PR automatically to its grandparent base once the immediate base branch's PR merges and that branch is deleted, independent of the stacking feature. Reach for `gh stack` once the chain grows past two or three PRs, or when the stack map matters for review.
+
 ## Edge Cases
 
 For single-commit branches, the commit message might be enough context. Still write a proper description but keep it brief.
