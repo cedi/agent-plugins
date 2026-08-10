@@ -4,6 +4,13 @@ All notable changes to this project are documented here. This file is maintained
 automatically by [release-please](https://github.com/googleapis/release-please)
 from [Conventional Commits](https://www.conventionalcommits.org/).
 
+## [3.2.0](https://github.com/cedi/agent-plugins/compare/v3.1.1...v3.2.0) (2026-08-05)
+
+
+### Features
+
+* **documentation:** add Mermaid SVG refinement skill ([036a823](https://github.com/cedi/agent-plugins/commit/036a823e01bbd759330114ca31d927f49d37c290))
+
 ## [3.1.1](https://github.com/cedi/agent-plugins/compare/v3.1.0...v3.1.1) (2026-07-06)
 
 
