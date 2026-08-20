@@ -14,13 +14,13 @@
 #   - explicit    (prints every action and SKIPs foreign entries)
 #
 # Usage:
-#   ./install.sh                  # link the 12 skills into ~/.agents/skills
+#   ./install.sh                  # link every skill into ~/.agents/skills
 #   ./install.sh DIR [DIR...]     # link into explicit roots instead
 #
 set -euo pipefail
 
 REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-SRC="$REPO/skills"
+SRC="$REPO/skills" # flat symlink index into plugins/*/skills/
 
 targets=("${@:-$HOME/.agents/skills}")
 

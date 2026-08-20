@@ -21,9 +21,10 @@ A `!` suffix or `BREAKING CHANGE:` footer triggers a major bump, e.g.
 
 ## Adding content
 
-- **Skill** (works in all four tools): create `skills/<name>/SKILL.md` with
-  `name` + `description` frontmatter, then symlink it into a plugin:
-  `ln -s ../../../skills/<name> plugins/<plugin>/skills/<name>`.
+- **Skill** (works in all four tools): create
+  `plugins/<plugin>/skills/<name>/SKILL.md` with `name` + `description`
+  frontmatter, then add it to the flat index:
+  `ln -s ../plugins/<plugin>/skills/<name> skills/<name>`.
 - **Agent** (Claude Code only): add `plugins/<plugin>/agents/<name>.md`.
 - **Output style** (Claude Code only): add `plugins/<plugin>/output-styles/<name>.md`.
 

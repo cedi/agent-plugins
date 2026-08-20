@@ -7,9 +7,9 @@
 Reusable AI-agent configuration shared across **Claude Code, OpenCode, Codex, and
 Cursor**.
 
-- **Skills** are authored once in the open [Agent Skills](https://agentskills.io)
-  standard (a flat `<name>/SKILL.md` dir) and then exposed through generated
-  plugin manifests for Claude Code, Codex, and Cursor.
+- **Skills** are authored once inside their plugin in the open
+  [Agent Skills](https://agentskills.io) standard. A flat symlink index exposes
+  every skill to OpenCode and other tools that read a shared skill directory.
 - **Agents** and **output styles** remain Claude Code-only components, bundled
   into the Claude plugin source manifests.
 
@@ -73,7 +73,7 @@ idempotent and additive — existing entries are left untouched.
 ## Layout
 
 ```
-skills/<name>/SKILL.md                # canonical skills — source of truth
+skills/<name> -> ../plugins/<plugin>/skills/<name>   # flat OpenCode index
 
 .claude-plugin/marketplace.json       # canonical marketplace index
 .cursor-plugin/marketplace.json       # generated Cursor marketplace
@@ -82,7 +82,7 @@ plugins/<plugin>/
   .claude-plugin/plugin.json          # canonical plugin manifest
   .cursor-plugin/plugin.json          # generated Cursor plugin manifest
   .codex-plugin/plugin.json           # generated Codex plugin manifest
-  skills/<name> -> ../../../skills/<name>   # symlink to canonical (no duplication)
+  skills/<name>/SKILL.md              # canonical skill source
   agents/<name>.md                    # Claude-only subagents
   output-styles/<name>.md             # Claude-only output styles
 
@@ -91,11 +91,10 @@ scripts/validate.py                   # canonical manifest + frontmatter validat
 scripts/sync-vendor-manifests.mjs     # generate Cursor/Codex manifests
 ```
 
-`plugins/*/skills/*` are symlinks into `skills/`, so each skill exists once.
-Within a marketplace install, Claude Code dereferences these symlinks into its
-plugin cache, so they work for remote installs too. Cursor and Codex now consume
-the same plugin directories through generated manifests instead of reading the
-flat skill tree directly.
+`plugins/*/skills/*` are real directories so Claude Code, Cursor, and Codex can
+consume them without following repository symlinks. Each `skills/*` entry links
+back to its canonical plugin directory, giving OpenCode a flat skill tree
+without duplicating files.
 
 ## How each tool discovers skills
 

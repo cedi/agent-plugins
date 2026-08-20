@@ -8,9 +8,10 @@ Checks performed:
   * marketplace.json: valid JSON, required fields, every entry resolves to a
     plugin dir with a manifest, and the plugin list matches plugins/ on disk.
   * plugin.json: valid JSON, has name + semver version.
-  * skills: every skills/<name>/SKILL.md has valid Agent Skills frontmatter
-    (name regex, name == dir, description length).
-  * plugin skill symlinks resolve to a canonical skill dir.
+  * skills: every plugins/<plugin>/skills/<name>/SKILL.md has valid Agent Skills
+    frontmatter (name regex, name == dir, description length).
+  * flat skill index: every skills/<name> symlink resolves to its plugin skill.
+  * plugin skills are real directories so consumers need not follow symlinks.
   * agents/output-styles: frontmatter has name + description.
 
 Exit code 0 on success, 1 on any error.
@@ -88,8 +89,9 @@ def frontmatter(path: Path) -> dict[str, str] | None:
 def check_skill(skill_dir: Path) -> None:
     name = skill_dir.name
     md = skill_dir / "SKILL.md"
+    label = skill_dir.relative_to(ROOT)
     if not md.is_file():
-        err(f"skills/{name}: missing SKILL.md")
+        err(f"{label}: missing SKILL.md")
         return
     fm = frontmatter(md)
     if fm is None:
@@ -97,11 +99,11 @@ def check_skill(skill_dir: Path) -> None:
     fm_name = fm.get("name")
     desc = fm.get("description")
     if fm_name != name:
-        err(f"skills/{name}: frontmatter name {fm_name!r} != dir {name!r}")
+        err(f"{label}: frontmatter name {fm_name!r} != dir {name!r}")
     if not fm_name or not NAME_RE.match(str(fm_name)) or len(str(fm_name)) > 64:
-        err(f"skills/{name}: invalid name {fm_name!r}")
+        err(f"{label}: invalid name {fm_name!r}")
     if not desc or not (1 <= len(str(desc)) <= 1024):
-        err(f"skills/{name}: description must be 1-1024 chars")
+        err(f"{label}: description must be 1-1024 chars")
 
 
 def check_agent_or_style(path: Path) -> None:
@@ -116,9 +118,6 @@ def check_agent_or_style(path: Path) -> None:
 
 def main() -> int:
     skills_root = ROOT / "skills"
-    canonical = sorted(p.name for p in skills_root.iterdir() if p.is_dir())
-    for d in (p for p in skills_root.iterdir() if p.is_dir()):
-        check_skill(d)
 
     mkt = load_json(ROOT / ".claude-plugin" / "marketplace.json")
     listed: set[str] = set()
@@ -142,6 +141,7 @@ def main() -> int:
     for extra in sorted(listed - on_disk):
         err(f"marketplace.json: lists {extra!r} with no plugins/ dir")
 
+    plugin_skills: dict[str, Path] = {}
     for plugin in sorted(on_disk):
         pdir = plugins_root / plugin
         manifest = load_json(pdir / ".claude-plugin" / "plugin.json")
@@ -153,21 +153,55 @@ def main() -> int:
                 err(f"plugins/{plugin}: plugin.json version {ver!r} not semver")
         sdir = pdir / "skills"
         if sdir.is_dir():
-            for link in sdir.iterdir():
-                if not (link / "SKILL.md").is_file():
-                    err(f"plugins/{plugin}/skills/{link.name}: does not resolve to a SKILL.md")
+            for skill_dir in sdir.iterdir():
+                label = skill_dir.relative_to(ROOT)
+                if skill_dir.is_symlink():
+                    err(f"{label}: plugin skills must be real directories, not symlinks")
+                    continue
+                if not skill_dir.is_dir():
+                    err(f"{label}: expected a skill directory")
+                    continue
+                check_skill(skill_dir)
+                if skill_dir.name in plugin_skills:
+                    other = plugin_skills[skill_dir.name].relative_to(ROOT)
+                    err(f"{label}: duplicate skill name, already defined at {other}")
+                else:
+                    plugin_skills[skill_dir.name] = skill_dir
         for sub in ("agents", "output-styles"):
             d = pdir / sub
             if d.is_dir():
                 for md in d.glob("*.md"):
                     check_agent_or_style(md)
 
+    flat_names: set[str] = set()
+    for link in skills_root.iterdir():
+        flat_names.add(link.name)
+        label = link.relative_to(ROOT)
+        if not link.is_symlink():
+            err(f"{label}: flat skill entries must be symlinks into plugins/")
+            continue
+        try:
+            resolved = link.resolve(strict=True)
+        except FileNotFoundError:
+            err(f"{label}: broken symlink")
+            continue
+        expected = plugin_skills.get(link.name)
+        if expected is None:
+            err(f"{label}: no matching plugin skill")
+        elif resolved != expected.resolve():
+            target = resolved.relative_to(ROOT) if resolved.is_relative_to(ROOT) else resolved
+            err(f"{label}: resolves to {target}, expected {expected.relative_to(ROOT)}")
+
+    for missing in sorted(set(plugin_skills) - flat_names):
+        source = plugin_skills[missing].relative_to(ROOT)
+        err(f"skills/{missing}: missing flat symlink to {source}")
+
     if errors:
         print(f"\u2718 {len(errors)} validation error(s):\n")
         for e in errors:
             print(f"  - {e}")
         return 1
-    print(f"\u2714 validation passed: {len(canonical)} skills, {len(on_disk)} plugins")
+    print(f"\u2714 validation passed: {len(plugin_skills)} skills, {len(on_disk)} plugins")
     return 0
 
 
