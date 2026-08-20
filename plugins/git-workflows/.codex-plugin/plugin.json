@@ -1,6 +1,6 @@
 {
   "name": "git-workflows",
-  "version": "3.3.0",
+  "version": "3.3.1",
   "description": "Git and GitHub workflows: changelog generation, PR creation, and PR review.",
   "author": {
     "name": "cedi",
