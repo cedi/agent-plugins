@@ -4,6 +4,18 @@ All notable changes to this project are documented here. This file is maintained
 automatically by [release-please](https://github.com/googleapis/release-please)
 from [Conventional Commits](https://www.conventionalcommits.org/).
 
+## [3.3.1](https://github.com/cedi/agent-plugins/compare/v3.3.0...v3.3.1) (2026-08-20)
+
+
+### Bug Fixes
+
+* store plugin skills as real directories ([5be4aab](https://github.com/cedi/agent-plugins/commit/5be4aabd82124428605fc45d580a40078841cf58))
+
+
+### Skills
+
+* add unslop writing skill ([16a93c6](https://github.com/cedi/agent-plugins/commit/16a93c64d42f778117bd594bc0521da0525e253e))
+
 ## [3.3.0](https://github.com/cedi/agent-plugins/compare/v3.2.0...v3.3.0) (2026-08-10)
 
 
