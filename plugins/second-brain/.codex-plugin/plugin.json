@@ -1,6 +1,6 @@
 {
   "name": "second-brain",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "description": "Obsidian second-brain workflows: capture, weekly review, weekly planning, and vault curation, driven by a vault config note.",
   "author": {
     "name": "cedi",

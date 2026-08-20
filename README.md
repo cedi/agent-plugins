@@ -18,11 +18,14 @@ Cursor**.
 | Plugin | Skills | Agents | Output styles |
 |--------|--------|--------|---------------|
 | **git-workflows** | changelog-generator, pr-review, pull-request, sre-code-reviewer | — | — |
-| **documentation** | documentation, strategic-design-doc, refine-mermaid-svg | design-doc | — |
+| **documentation** | documentation, strategic-design-doc, refine-mermaid-svg, unslop | design-doc | — |
 | **tpm** | jira-cli | — | — |
 | **product-design** | cognitive-load, fogg-behavior-mode, trust-psychology | — | — |
 | **mental-models** | five-why, graph-thinking, tit-for-tat | — | talk |
 | **second-brain** | vault-capture, vault-weekly-review, vault-weekly-planning, vault-curate, vault-ask, vault-link, vault-moc | — | — |
+
+The `unslop` skill is vendored from
+[`cursor/plugins`](https://github.com/cursor/plugins/blob/99559f2f52047978602ef365589275831e76af07/pstack/skills/unslop/SKILL.md).
 
 ## Install
 
